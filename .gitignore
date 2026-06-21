@@ -4,6 +4,10 @@ node_modules/
 # Build
 dist/
 
+
+.env.*
+frontend/.env
+frontend/.env.*
 # Environment
 .env
 .env.local
