@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/jpeg" href="https://dev-maheshstores.pantheonsite.io/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-21-at-3.38.11-AM.jpeg" />
+    <link rel="apple-touch-icon" href="https://dev-maheshstores.pantheonsite.io/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-21-at-3.38.11-AM.jpeg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#7b2cbf" />
+    <meta name="description" content="Ink & Dreams - Where Dreams Become Stories. Read, listen, and share creative stories." />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Ink & Dreams" />
+    <link rel="manifest" href="/manifest.json" />
+    <title>Ink & Dreams - Where Dreams Become Stories</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('SW registered:', reg.scope))
+            .catch(err => console.log('SW registration failed:', err));
+        });
+      }
+    </script>
+  </body>
+</html>

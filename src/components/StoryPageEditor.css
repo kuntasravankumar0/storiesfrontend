@@ -1,0 +1,396 @@
+.story-editor {
+  width: 100%;
+}
+
+.editor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.editor-header h3 {
+  font-size: 1.2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.page-count-badge {
+  background: var(--gradient-accent);
+  color: white;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.editor-pages {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.editor-page {
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-card);
+}
+
+.page-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.page-label {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+.page-actions-bar {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.page-actions-bar button {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.page-actions-bar button:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.page-actions-bar button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.page-actions-bar .delete-btn:hover:not(:disabled) {
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+/* A4 Page Canvas */
+.a4-page {
+  padding: 2rem;
+  min-height: 400px;
+  background: white;
+  position: relative;
+}
+
+[data-theme="dark"] .a4-page {
+  background: #1e1e2f;
+}
+
+/* Content Blocks */
+.content-block {
+  margin-bottom: 1rem;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  padding: 0.75rem;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.content-block:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(123, 44, 191, 0.05);
+}
+
+.block-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.block-type-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.block-actions {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.block-actions button {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  transition: all 0.2s ease;
+}
+
+.block-actions button:hover:not(:disabled) {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.block-actions .delete-btn:hover {
+  color: #ef4444 !important;
+  border-color: #ef4444 !important;
+}
+
+.block-actions button:disabled {
+  opacity: 0.3;
+}
+
+/* Text Block Editor */
+.text-block-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.text-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.4rem;
+  background: var(--bg-secondary);
+  border-radius: 6px;
+  flex-wrap: wrap;
+}
+
+.tb-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  background: none;
+  border: 1px solid transparent;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.tb-btn:hover {
+  background: var(--bg-card);
+  border-color: var(--border);
+}
+
+.tb-btn.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.tb-separator {
+  color: var(--border);
+  margin: 0 0.2rem;
+  font-size: 0.8rem;
+}
+
+.tb-select {
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text);
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.font-select {
+  max-width: 120px;
+}
+
+.tb-color {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 2px;
+}
+
+.text-block-textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  resize: vertical;
+  line-height: 1.7;
+  transition: border-color 0.2s ease;
+}
+
+.text-block-textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+/* Image Block Editor */
+.image-block-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.image-url-row input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.image-url-row input:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.image-settings-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.img-setting {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.img-setting label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.img-setting input, .img-setting select {
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.8rem;
+  width: 100px;
+}
+
+.image-preview-box {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+}
+
+.image-preview-box img {
+  border-radius: 6px;
+  max-height: 300px;
+  object-fit: contain;
+}
+
+/* Add Block Row */
+.add-block-row {
+  display: flex;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--border);
+  margin-top: 1rem;
+}
+
+.add-block-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  background: var(--bg-secondary);
+  border: 1px dashed var(--border);
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.add-block-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(123, 44, 191, 0.05);
+}
+
+/* Add Page Button */
+.add-page-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  border: 2px dashed var(--accent);
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.add-page-btn:hover {
+  background: rgba(123, 44, 191, 0.1);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .a4-page {
+    padding: 1rem;
+  }
+
+  .text-toolbar {
+    gap: 0.15rem;
+  }
+
+  .image-settings-row {
+    flex-direction: column;
+  }
+}
+
+/* Fix long text overflow in editor */
+.a4-page,
+.text-block-textarea,
+.image-preview-box,
+.content-block {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.text-block-textarea {
+  overflow-y: auto;
+  overflow-x: hidden;
+}

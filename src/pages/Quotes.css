@@ -1,0 +1,102 @@
+.quotes-page {
+  padding: 2rem 0 4rem;
+}
+
+.quotes-masonry {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.quote-card-full {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  position: relative;
+  transition: var(--transition);
+}
+
+.quote-content {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.quote-mark {
+  font-size: 5rem;
+  font-family: 'Playfair Display', serif;
+  color: var(--accent-light);
+  opacity: 0.2;
+  position: absolute;
+  top: -20px;
+  left: -5px;
+  line-height: 1;
+}
+
+.quote-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  font-style: italic;
+  padding-top: 1rem;
+  color: var(--text);
+}
+
+.quote-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.quote-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.quote-info .quote-author {
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.quote-info .quote-cat {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-light);
+  padding: 2px 10px;
+  background: var(--bg-secondary);
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.quote-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.quote-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  background: var(--bg-secondary);
+  color: var(--text-light);
+  font-size: 0.8rem;
+  transition: var(--transition);
+}
+
+.quote-action-btn:hover {
+  background: var(--accent);
+  color: white;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .quotes-masonry {
+    grid-template-columns: 1fr;
+  }
+}
